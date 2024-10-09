@@ -1,9 +1,8 @@
-import MyComponent from "./senseScroll";
-
+import HeaderWrapper from "./Header";
 function App() {
   return (
     <div>
-      <MyComponent />
+      <HeaderWrapper />
       <br />
       <br />
       <br />
