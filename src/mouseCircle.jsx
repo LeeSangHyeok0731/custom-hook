@@ -9,6 +9,7 @@ const Circle = styled.div`
     border-radius:50%;
     position: absolute;
     transform: translate(-50%, -50%);
+    z-index:-1;
 `
 
 function MouseCircle() {

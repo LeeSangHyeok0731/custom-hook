@@ -1,20 +1,27 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import ChangeCircleLoacte from "../changeLocate";
 import MouseCircle from "../mouseCircle";
-import Timer from "../Timer";
+import { Routes, Route } from 'react-router-dom';  // Routes 추가
+import StartPage from "../StartPage";
 
 const Header = styled.div`
-    position:fixed;
-`
+    
+`;
 
-function HeaderWrapper(){
+function HeaderWrapper() {
     return (
         <Header>
-            <ChangeCircleLoacte />
-            <Timer />
-            <MouseCircle />
+            <Routes>  
+                <Route path="/" element={<StartPage />} />  
+                <Route path="/play" element={
+                    <>
+                        <ChangeCircleLoacte />
+                        <MouseCircle />
+                    </>
+                } />
+            </Routes>
         </Header>
-    )
+    );
 }
 
 export default HeaderWrapper;
