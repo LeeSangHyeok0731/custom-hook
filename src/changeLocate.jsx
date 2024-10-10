@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import useScrollPosition from "./senseScrollEvent";
 import useMousePosition from "./mouseMoveEvent";
 import { useEffect, useState } from "react";
 
@@ -16,11 +15,14 @@ const Circle = styled.div`
 `;
 
 function ChangeCircleLocate() {
-  const [scrollPosition, setScrollPosition] = useState(Math.floor(Math.random() * (500 - 1 + 1)) + 1); // 고정된 공의 Y 좌표
+  const [fixedX, setFixedX] = useState(Math.floor(Math.random() * (1080 - 1 + 1)) + 1); // 고정된 공의 Y 좌표
+  const [fixedY, setFixedY] = useState(Math.floor(Math.random() * (1920 - 1 + 1)) + 1); // 고정된 공의 Y 좌표
+  const [count, setCount] = useState(0);
+
   const { x, y } = useMousePosition(); // 마우스를 따라 움직이는 공의 좌표
   const [isColliding, setIsColliding] = useState(false);
 
-  const fixedCircle = { x: scrollPosition, y: scrollPosition, radius: 50 }; // 고정된 공의 좌표와 반지름
+  const fixedCircle = { x: fixedX, y: fixedY, radius: 50 }; // 고정된 공의 좌표와 반지름
 
   const detectCollision = (circle1, circle2) => {
     const dx = circle1.x - circle2.x; // 200 - 
@@ -35,13 +37,19 @@ function ChangeCircleLocate() {
 
     if (collided) {
       console.log("충돌 발생!");
-      setScrollPosition(Math.floor(Math.random() * (500 - 1 + 1)) + 1)
+      setFixedX(Math.floor(Math.random() * (1920 - 1 + 1)) + 1)
+      setFixedY(Math.floor(Math.random() * (1080 - 1 + 1)) + 1)
+      setCount(count + 1);
     }
-  }, [scrollPosition, x, y]);
+  }, [fixedX, fixedY, x, y]);
 
   return (
     <>
-      <Circle top={scrollPosition} left={scrollPosition} color={isColliding}/>
+        <div>{count}</div>
+        <div>
+            x: {fixedX} y: {fixedY}
+        </div>
+        <Circle top={fixedY} left={fixedX} color={isColliding}/>
     </>
   );
 }
