@@ -1,4 +1,5 @@
-import HeaderWrapper from "./Header";
+import HeaderWrapper from "./components/Header";
+
 function App() {
   return (
     <div>

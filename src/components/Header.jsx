@@ -1,6 +1,7 @@
 import styled from "styled-components"
-import ChangeBackgroudColor from "./changeColor";
-import ChangeCircleLoacte from "./changeLocate";
+import ChangeBackgroudColor from "../changeColor";
+import ChangeCircleLoacte from "../changeLocate";
+import MouseCircle from "../mouseCircle";
 
 const Header = styled.div`
     position:fixed;
@@ -11,6 +12,7 @@ function HeaderWrapper(){
         <Header>
             <ChangeBackgroudColor />
             <ChangeCircleLoacte />
+            <MouseCircle />
         </Header>
     )
 }

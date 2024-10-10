@@ -14,6 +14,9 @@ const Circle = styled.div`
 
 function ChangeCircleLoacte(){
     const scrollPosition = useScrollPosition();
+    
+
+    
     return(
         <Circle top={scrollPosition}/>
     )
