@@ -7,7 +7,7 @@ const Circle = styled.div`
     width:100px;
     height:100px;
     border-radius:50%;
-    position: absolute; /* 원이 화면에서 움직일 수 있도록 */
+    position: absolute;
     transform: translate(-50%, -50%);
 `
 
@@ -15,7 +15,7 @@ function MouseCircle() {
     const { x, y } = useMousePosition();
 
     useEffect(() => {
-
+       
     }, [x, y])
 
     return(
