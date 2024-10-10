@@ -19,13 +19,13 @@ function ChangeCircleLocate() {
   const [fixedY, setFixedY] = useState(Math.floor(Math.random() * (1920 - 1 + 1)) + 1); // 고정된 공의 Y 좌표
   const [count, setCount] = useState(0);
 
-  const { x, y } = useMousePosition(); // 마우스를 따라 움직이는 공의 좌표
+  const { x, y } = useMousePosition();
   const [isColliding, setIsColliding] = useState(false);
 
-  const fixedCircle = { x: fixedX, y: fixedY, radius: 50 }; // 고정된 공의 좌표와 반지름
-
+  const fixedCircle = { x: fixedX, y: fixedY, radius: 50 }; 
+  
   const detectCollision = (circle1, circle2) => {
-    const dx = circle1.x - circle2.x; // 200 - 
+    const dx = circle1.x - circle2.x;
     const dy = circle1.y - circle2.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
     return distance < circle1.radius + circle2.radius;
@@ -45,7 +45,7 @@ function ChangeCircleLocate() {
 
   return (
     <>
-        <div>{count}</div>
+        <h1>{count}</h1>
         <div>
             x: {fixedX} y: {fixedY}
         </div>
