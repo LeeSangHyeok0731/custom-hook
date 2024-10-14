@@ -3,8 +3,9 @@ import ChangeCircleLoacte from "../changeLocate";
 import MouseCircle from "../mouseCircle";
 import { Routes, Route } from 'react-router-dom';  // Routes 추가
 import StartPage from "../StartPage";
+import LoginPage from "../LoginPage";
 
-const Header = styled.div`
+const Header = styled.div`  
     
 `;
 
@@ -19,6 +20,7 @@ function HeaderWrapper() {
                         <MouseCircle />
                     </>
                 } />
+                <Route path="/login" element={<LoginPage />} />
             </Routes>
         </Header>
     );

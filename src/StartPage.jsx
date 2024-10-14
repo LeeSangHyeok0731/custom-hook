@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import RankingGroup from "./Ranking";
+import LoginButton from "./LoginButton";
 
 const Body = styled.div`
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
+    display: flex;  
     justify-content: center;
 `;
 
@@ -39,7 +40,9 @@ function StartPage() {
                 <StartButton to="/play" aria-label="게임 시작하기">
                     시작하기
                 </StartButton>
+                <LoginButton />
             </StartButtonWrapper>
+            <RankingGroup />    
         </Body>
     );
 }
